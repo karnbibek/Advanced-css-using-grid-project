@@ -1,0 +1,33 @@
+.features {
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: auto auto; // no need to define like this as this is default
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // to make responsive. min width of column 25rem and max is 1fr. if less than 25 rem then grid starts to adjust.
+
+    grid-gap: 6rem;
+    align-items: start; // to set the items which has less content to top/start for proper alignment.
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2;
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+
+}
